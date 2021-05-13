@@ -1,3 +1,9 @@
+<?php 
+  session_start();
+  if (!isset($_SESSION['email'])) {
+    header("Location: login.php");
+}
+  ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -43,6 +49,8 @@
                 <li class=""><a href="#about">About</a></li>
                 <li class=""><a href="#testimonial">Testimonial</a></li>
                 <li class=""><a href="#contact">Contact</a></li>
+                <li class=""><a href="login.php">Log in</a></li>
+                <li class=""><a href="logout.php">Log Out</a></li>
               </ul>
             </div>
           </div>
@@ -55,6 +63,10 @@
               <img src="img/logo.png" class="img-responsive">
             </div>
             <div class="banner-text text-center">
+            <div style="color:white">
+              <?php echo "<h3><font color=white>Welcome,  " . $_SESSION['email'] . "  !!</font></h3>"; ?>
+            </div>
+            
               <h1 class="white">Healthcare at your desk!!</h1>
               <p>The hospital you trust to care for those you love..</p>
               <a href="#contact" class="btn btn-appoint">Make an Appointment.</a>

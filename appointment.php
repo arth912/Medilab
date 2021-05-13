@@ -68,7 +68,7 @@ use PHPMailer\PHPMailer\PHPMailer;
     
       if($mail->send())
       { 
-        echo "check your email.";
+        echo "check your email.!!";
       }
       else{
         $status = "fail";
